@@ -1,17 +1,19 @@
 # Order History, Stage 1: Test Steps from the Requirement Card
 
-⌨️ **Stage 1 of 4.** Over the next four lessons you build the test boilerplate for one TechShop feature, order history, the way the module taught it: Claude drafts, you decide, you deliver. Everything lands in one repository, and every stage gets a code review with comments on your lines.
+⌨️ **Stage 1 of 4.** Over the next four lessons, you'll build the test boilerplate for one TechShop feature, order history, according to the module's structure. First, Claude drafts the test, then you check it and make clear decisions on how to run the test.
 
-Stage 1 is the foundation. The test steps you deliver here are what the page object in the next stage will be generated from — so a sloppy step now is a sloppy method later.
+Everything lands in one repository, where each of your stages gets a code review with comments on your lines.
+
+Stage 1 is the foundation. Remember, the test steps you deliver here are what the page object in the next stage will be generated from, so avoid mistakes now to improve your method later.
 
 **You'll need:** a fork of `order-history-stage-1` (link below) · `requirements/TECH-342-order-history.md` · `conventions/test-step-template.md` · `prompts/01-test-steps.md` · `samples/tech-318-*` · a new Claude conversation.
 
-**How the review works.** You submit your repo; an AI reviewer reads it and comments on specific lines. 🔴 means fix it and resubmit; 🟡 is a suggestion; 🟢 is praise. On the first pass it tells you *what* is wrong, not how to fix it. That part is yours.
+**How the review works.** You submit your repo; an AI reviewer reads it and comments on specific lines. 🔴 means fix it and resubmit 🟡 is a suggestion 🟢 is praise for good work On the first pass it tells you what is wrong, not how to fix it. That is your work.
 
 
 ### The card
 
-Open `requirements/TECH-342-order-history.md` and read all of it — description, every AC, the out-of-scope list. Here it is for reference; the file is the source.
+Open `requirements/TECH-342-order-history.md` and read all of it: description, every AC, the out-of-scope list. Here it is for reference; the file is the source.
 
 ```
 📋 TECH-342 — Order history
@@ -47,7 +49,7 @@ Out of scope:
 
 Three questions, answered in `review-notes.md › Stage 1 › Before generating`, 3–5 lines total:
 - Which AC assumes something it doesn't say — the condition a word-for-word conversion would drop?
-- Which AC names something the card never defines, so any concrete value you'd put in a step is a guess?
+- Which AC names something the card never defines, so any specific value you'd put in a step is a guess?
 - Which AC is a boundary, where the interesting test lives at the edge?
 
 This is the part the model can't do. It's also the first thing the reviewer reads.
@@ -78,19 +80,19 @@ Test Step [number]
   Expected Result:  [something you can observe]
 ```
 
-Concrete data in every step — an order number, a date, a status — never "a valid order". Where the card leaves something open, write `[⚠ AMBIGUOUS: …]` rather than guessing. Nothing you flagged in step 3 survives into this file.
+Concrete data in every step — an order number, a date, a status — never "a valid order." Where the card leaves something open, write `[⚠ AMBIGUOUS: …]` rather than guessing. Nothing you flagged in step 3 transfers to this file.
 
 ### 5. Control pass
 
-`samples/tech-318-ai-draft.md` is a model's steps for a different card (`samples/tech-318-password-reset.md`). It has all three of the mistakes above. Find them; list them in `Stage 1 › Control pass` as *step · criterion · what's wrong*. No rewrite.
+`samples/tech-318-ai-draft.md` is a model's steps for a different card (`samples/tech-318-password-reset.md`). It has all three of the mistakes above. Find them; list them in `Stage 1 › Control pass` as step · criterion · what's wrong. No rewrite.
 
 ### 6. One sentence
 
-`Stage 1 › Hardest call`: which AC was the hardest to convert, and what would a literal conversion of it miss? Naming the AC isn't the answer; saying what gets dropped is.
+`Stage 1 › Hardest call`: which AC was the hardest to convert, and what would a literal conversion of it miss? Name what is dropped to answer the questions.
 
 ### Submit
 
-Commit, push, submit the repo link. The reviewer reads `tests/steps/TECH-342.md`, `claude-runs/01-test-steps.md` and your Stage 1 notes.
+Commit, push, and submit the repo link. The reviewer reads `tests/steps/TECH-342.md`, `claude-runs/01-test-steps.md`, and your Stage 1 notes.
 
 ### ✅ Before you submit
 
